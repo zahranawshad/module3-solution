@@ -1,0 +1,77 @@
+
+
+/* Ensure menu items are full width in mobile view */
+@media (max-width: 767px) {
+    .navbar-nav {
+        text-align: center; /* Center-align text in mobile menu */
+
+    }
+    .navbar-nav > li {
+        display: block; /* Stack menu items vertically */
+    }
+    .navbar-nav > li > a {
+        display: block; /* Full width links in mobile view */
+        padding: 15px; /* Adjust padding for mobile links */
+    }
+}
+
+
+/* Section background colors */
+.section:nth-child(1) {
+    background-color: #cab6b6;
+}
+
+.section:nth-child(2) {
+    background-color: #cab6b6;
+}
+
+.section:nth-child(3) {
+    background-color: #cab6b6;
+}
+
+/* Common Section Styling */
+.section {
+    padding: 20px;
+    margin-bottom: 20px; /* Space between rows */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Flexbox container for the sections */
+.container .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Large Screens (Desktop) */
+@media (min-width: 992px) {
+    .section {
+        flex: 1 1 calc(33.333% - 20px); /* Three columns with margin for gap */
+        margin-right: 20px; /* Add margin to the right for spacing */
+    }
+    .section:nth-child(3) {
+        margin-right: 0; /* Remove right margin on the last item */
+    }
+}
+
+/* Medium Screens (Tablet) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        flex: 1 1 calc(50% - 20px); /* Two columns with margin for gap */
+        margin-right: 20px; /* Add margin to the right for spacing */
+    }
+    .section:nth-child(2n) {
+        margin-right: 0; /* Remove right margin on even items */
+    }
+    .section:nth-child(3) {
+        flex: 1 1 100%; /* Full width for the third section */
+        margin-right: 0; /* Remove right margin */
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 767px) {
+    .section {
+        flex: 1 1 100%; /* Full width for each section */
+        margin-right: 0; /* No right margin */
+    }
+}
